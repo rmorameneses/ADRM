@@ -1,6 +1,9 @@
 <StackLayout>
-    <TextField hint="Email Address" keyboardType="email" autocorrect="false" autocapitalizationType="none"></TextField>
-    <TextField hint="Password" secure="true"></TextField>
+    <TextField hint="Email address" keyboardType="email" [(ngModel)]="user.email" autocorrect="false" autocapitalizationType="none"></TextField>
+    <TextField hint="First name" keyboardType="email" [(ngModel)]="user.first_name" autocorrect="false" autocapitalizationType="none" visibility="{{ isLoggingIn ? 'collapsed' : 'visible' }}"></TextField>
+    <TextField hint="Last name" keyboardType="email" [(ngModel)]="user.last_name" autocorrect="false" autocapitalizationType="none" visibility="{{ isLoggingIn ? 'collapsed' : 'visible' }}"></TextField>
+    <TextField hint="Username" keyboardType="email" [(ngModel)]="user.username" autocorrect="false" autocapitalizationType="none" visibility="{{ isLoggingIn ? 'collapsed' : 'visible' }}"></TextField>
+    <TextField hint="Password" secure="true" [(ngModel)]="user.password"></TextField>
 
     <Button [text]="isLoggingIn ? 'Sign in' : 'Sign up'" class="submit-button" (tap)="submit()"></Button>
     <Button [text]="isLoggingIn ? 'Sign up' : 'Back to login'" (tap)="toggleDisplay()"></Button>
